@@ -1,19 +1,19 @@
 (() => {
 	
-	var previewForm = document.getElementById('previewform');
+	const previewForm = document.getElementById('previewform');
 
-	var url = location.search.substring(1).replace(/\/\/github\.com/, '//raw.githubusercontent.com').replace(/\/blob\//, '/'); //Get URL of the raw file
+	const url = location.search.substring(1).replace(/\/\/github\.com/, '//raw.githubusercontent.com').replace(/\/blob\//, '/'); //Get URL of the raw file
 
-	var replaceAssets = () => {
-        var frame;
-        var a;
-        var link;
-        var links = [];
-        var script;
-        var scripts = [];
-        var i;
-        var href;
-        var src;
+	const replaceAssets = () => {
+        let frame;
+        let a;
+        let link;
+        const links = [];
+        let script;
+        const scripts = [];
+        let i;
+        let href;
+        let src;
         //Framesets
         if (document.querySelectorAll('frameset').length)
 			return; //Don't replace CSS/JS if it's a frameset, because it will be erased by document.write()
@@ -67,7 +67,7 @@
 		});
     };
 
-	var loadHTML = data => {
+	const loadHTML = data => {
 		if (data) {
 			data = data.replace(/<head([^>]*)>/i, '<head$1><base href="' + url + '">').replace(/<script(\s*src=["'][^"']*["'])?(\s*type=["'](text|application)\/javascript["'])?/gi, '<script type="text/htmlpreview"$1'); //Add <base> just after <head> and replace <script type="text/javascript"> with <script type="text/htmlpreview">
 			setTimeout(() => {
@@ -81,7 +81,7 @@
 
 	var loadCSS = data => {
 		if (data) {
-			var style = document.createElement('style');
+			const style = document.createElement('style');
 			style.innerHTML = data;
 			document.head.appendChild(style);
 		}
@@ -89,14 +89,14 @@
 
 	var loadJS = data => {
 		if (data) {
-			var script = document.createElement('script');
+			const script = document.createElement('script');
 			script.innerHTML = data;
 			document.body.appendChild(script);
 		}
 	};
 	
 	var fetchProxy = (url, options, i) => {
-		var proxy = [
+		const proxy = [
 			'https://cors-anywhere.herokuapp.com/',
 			'https://yacdn.org/proxy/',
 			'https://api.codetabs.com/v1/proxy/?quest='
