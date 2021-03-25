@@ -65,6 +65,9 @@
 >What it does is: load HTML using CORS proxy, then process all links, frames, scripts and styles, and load each of them using CORS proxy, so they can be evaluated by the browser.
 
 
+
+
+
   <!-- WEBSITE LINK -->
   ## Live Deployment
   <a href="https://GIT HTML PREVIEW TOOL.netlify.app/">[Live Website]</a>
@@ -90,8 +93,25 @@
 
   ## About
 
-  [● See Website ●]()  
-  *(Inspired by [app name]())*
+
+>Cross-Origin Resource Sharing (CORS) is a security mechanism that uses additional HTTP headers to tell browsers to give a web application running at one origin, access to selected resources from a different origin. A web application executes a cross-origin HTTP request when it requests a resource(Images, Scripts, CSS files, etc.)that has a different origin (domain, protocol, or port) from its own.
+
+
+>Cross-origin requests, however, mean that servers must implement ways to handle requests from origins outside of their own. CORS allows servers to specify who (i.e., which origins) can access the assets on the server, among many other things.
+
+>Access-Control-Allow-Origin Header
+When Site A tries to fetch content from Site B, Site B can send an Access-Control-Allow-Origin response header to tell the browser that the content of this page is accessible to certain origins. (An origin is a domain, plus a scheme and port number.) By default, Site B's pages are not accessible to any other origin; using the Access-Control-Allow-Origin header opens a door for cross-origin access by specific requesting origins. The Access-Control-Allow-Origin header is critical to resource security.
+You can find a description of each CORS header at the following: CORS Headers.
+Pre-Flight Request
+Most servers will allow GET requests but may block requests to modify resources on the server. Servers don't just blindly block such requests though; they have a process in place that first checks and then communicates to the client (your web browser) which requests are allowed.
+When a request is made using any of the following HTTP request methods, a standard preflight request will be made before the original request.
+PUT
+DELETE
+CONNECT
+OPTIONS
+TRACE
+PATCH
+Preflight requests use the OPTIONS header. The preflight request is sent before the original request, hence the term "preflight." The purpose of the preflight request is to determine whether or not the original request is safe (for example, a DELETE request). The server will respond to the preflight request and indicate whether or not the original request is safe. If the server specifies that the original request is safe, it will allow the original request. Otherwise, it will block the original request.
 
 </div>
 
