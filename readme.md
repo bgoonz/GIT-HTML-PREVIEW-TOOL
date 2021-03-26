@@ -18,7 +18,7 @@
 
   <!-- TOC -->
   **TOC**  
-  [About](#about) ● [Features](#features) ● [How It Works](#how-it-works) ●  [Development](#development) ● [Contact](#contact)
+  [About](#about) ● [How It Works](#how-it-works) ●  [Development](#development) ● [Contact](#contact)
   
 
 
